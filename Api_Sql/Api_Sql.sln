@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.10.35013.160
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Api_Sql", "Api_Sql.csproj", "{AD34DA90-F637-4E60-B1C3-4D18611451CD}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{AD34DA90-F637-4E60-B1C3-4D18611451CD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AD34DA90-F637-4E60-B1C3-4D18611451CD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AD34DA90-F637-4E60-B1C3-4D18611451CD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AD34DA90-F637-4E60-B1C3-4D18611451CD}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {5A332A93-7B97-417C-AFC2-E0F2D1CFCD78}
+	EndGlobalSection
+EndGlobal

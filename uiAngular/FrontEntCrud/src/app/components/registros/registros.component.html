@@ -1,0 +1,19 @@
+<div>
+    <h2>Lista de Registros</h2>
+    <ul>
+      <li *ngFor="let registro of registros">
+        {{ registro.nombre }} {{ registro.apellido }} 
+        <button (click)="editRegistro(registro)">Editar</button>
+        <button (click)="deleteRegistro(registro.documento)">Eliminar</button>
+      </li>
+    </ul>
+  
+    <h3>Agregar/Editar Registro</h3>
+    <form (submit)="saveRegistro()">
+      <input [(ngModel)]="selectedRegistro.nombre" placeholder="Nombre" name="nombre" required />
+      <input [(ngModel)]="selectedRegistro.apellido" placeholder="Apellido" name="apellido" required />
+      <input [(ngModel)]="selectedRegistro.documento" placeholder="Documento" name="documento" required />
+      <button type="submit">Guardar</button>
+    </form>
+  </div>
+  
