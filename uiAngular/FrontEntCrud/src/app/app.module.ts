@@ -20,12 +20,14 @@ import { MomentDateModule } from '@angular/material-moment-adapter'
 import { MatSnackBarModule } from '@angular/material/snack-bar'
 import { MatIconModule } from '@angular/material/icon'
 import { MatDialogModule} from '@angular/material/dialog'
-import { MatGridListModule } from '@angular/material/grid-list'
+import { MatGridListModule } from '@angular/material/grid-list';
+import { DialogAddEditComponent } from './Dialog/dialog-add-edit/dialog-add-edit.component'
 
 @NgModule({
   declarations: [
     AppComponent,
-    RegistrosComponent
+    RegistrosComponent,
+    DialogAddEditComponent
   ],
   imports: [
     BrowserModule,

@@ -1,0 +1,46 @@
+<h1 mat-dialog-title> {{tituloAccion}} Registro </h1>
+<div mat-dialog-content> 
+
+  <form [formGroup]="formRegistro">
+    <mat-grid-list cols="1" rowHeight="100px">
+        <mat-grid-tile>
+            <mat-form-field appearance="outline">
+              <mat-label>Documento</mat-label>
+              <input matInput formControlName="documento" auto="off">  
+            </mat-form-field>
+        </mat-grid-tile>     
+    </mat-grid-list>
+  </form>  
+
+  <form [formGroup]="formRegistro">
+    <mat-grid-list cols="1" rowHeight="100px">
+        <mat-grid-tile>
+            <mat-form-field appearance="outline">
+              <mat-label>Nombre</mat-label>
+              <input matInput formControlName="nombre" auto="off">  
+            </mat-form-field>
+        </mat-grid-tile>     
+    </mat-grid-list>
+  </form>
+
+  <form [formGroup]="formRegistro">
+    <mat-grid-list cols="1" rowHeight="100px">
+        <mat-grid-tile>
+            <mat-form-field appearance="outline">
+              <mat-label>Apellido</mat-label>
+              <input matInput formControlName="apellido" auto="off">  
+            </mat-form-field>
+        </mat-grid-tile>     
+    </mat-grid-list>
+  </form>
+  
+</div>
+<div mat-dialog-actions>
+  <button mat-button mat-dialog-close color="warn">Volver</button>
+  <button mat-button color="primary"
+  (click)="addEditRegistro()"
+  [disabled]="formRegistro.invalid"
+  >{{botonAccion}}
+  
+  </button> 
+</div>
