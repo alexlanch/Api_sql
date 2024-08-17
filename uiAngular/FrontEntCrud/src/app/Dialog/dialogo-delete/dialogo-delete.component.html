@@ -1,0 +1,11 @@
+<h1 mat-dialog-title> Eliminar Registro </h1>
+<div mat-dialog-content> 
+  ¿Desea eliminar el empleado "{{dataRegistros.nombre}} {{dataRegistros.apellido}}"
+</div>
+<div mat-dialog-actions>
+  <button mat-button mat-dialog-close color="warn">Volver</button>
+  <button mat-button color="primary"
+  (click)="confirmar_Eliminar()"
+  >Sí, eliminar
+  </button> 
+</div>

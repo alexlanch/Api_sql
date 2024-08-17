@@ -21,13 +21,15 @@ import { MatSnackBarModule } from '@angular/material/snack-bar'
 import { MatIconModule } from '@angular/material/icon'
 import { MatDialogModule} from '@angular/material/dialog'
 import { MatGridListModule } from '@angular/material/grid-list';
-import { DialogAddEditComponent } from './Dialog/dialog-add-edit/dialog-add-edit.component'
+import { DialogAddEditComponent } from './Dialog/dialog-add-edit/dialog-add-edit.component';
+import { DialogoDeleteComponent } from './Dialog/dialogo-delete/dialogo-delete.component'
 
 @NgModule({
   declarations: [
     AppComponent,
     RegistrosComponent,
-    DialogAddEditComponent
+    DialogAddEditComponent,
+    DialogoDeleteComponent
   ],
   imports: [
     BrowserModule,

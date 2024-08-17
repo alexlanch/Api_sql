@@ -73,18 +73,29 @@ export class DialogAddEditComponent implements OnInit{
       apellido:this.formRegistro.value.apellido
     }
 
-    if(this._dataService == null){
-      
+    if(this.dataRegistros == null){
+      this._dataService.addRegistro(modelo).subscribe({
+        next:(data)=>{
+          this.mostrarAlerta("Registro creado","Listo");
+          this.dialogoReferencia.close("creado");
+        },error:(e)=>{
+          this.mostrarAlerta("No se pudo crear Registro","Error");
+        }
+      })
+
+    }else{
+
+      this._dataService.updateRegistro(this.dataRegistros.documento, modelo).subscribe({
+        next:(data)=>{
+          this.mostrarAlerta("Registro fue editado","Listo");
+          this.dialogoReferencia.close("editado");
+        },error:(e)=>{
+          this.mostrarAlerta("No se pudo editar Registro","Error");
+        }
+      })
     }
 
-    this._dataService.addRegistro(modelo).subscribe({
-      next:(data)=>{
-        this.mostrarAlerta("Registro creado", "Listo");
-        this.dialogoReferencia.close("creado");
-      },error:(e)=>{
-        this.mostrarAlerta("No se pudo crear Registro", " Error");
-      }
-    })
+    
   }
 
   ngOnInit(): void {

@@ -24,7 +24,7 @@ export class RegistrosComponent implements OnInit {
     });
   }
 
-  saveRegistro(): void {
+  /*saveRegistro(): void {
     if (this.selectedRegistro.id) {
       this.dataService.updateRegistro(this.selectedRegistro.documento.toString(), this.selectedRegistro).subscribe(() => {
         this.resetForm();
@@ -36,7 +36,7 @@ export class RegistrosComponent implements OnInit {
         this.loadRegistros();
       });
     }
-  }
+  }*/
 
   editRegistro(registro: Registros): void {
     this.selectedRegistro = { ...registro };

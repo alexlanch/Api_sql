@@ -8,6 +8,8 @@ import { error } from 'console';
 import e from 'express';
 import { MatDialog } from '@angular/material/dialog';
 import { DialogAddEditComponent } from './Dialog/dialog-add-edit/dialog-add-edit.component';
+import { MatSnackBar } from '@angular/material/snack-bar';
+import { DialogoDeleteComponent } from './Dialog/dialogo-delete/dialogo-delete.component';
 
 @Component({
   selector: 'app-root',
@@ -23,7 +25,9 @@ export class AppComponent implements AfterViewInit, OnInit{
   dataSource = new MatTableDataSource<Registros>();
   constructor(
     private dataSvc: DataService,
-    public dialog:MatDialog
+    public dialog:MatDialog,
+    private _dataService: DataService,
+    private _snackBar:MatSnackBar
   ){
 
   }
@@ -63,6 +67,7 @@ export class AppComponent implements AfterViewInit, OnInit{
       }
     });
   }
+  
 
   dialogoEditarRegistro(dataResponse:Registros){
     this.dialog.open(DialogAddEditComponent,{
@@ -73,8 +78,37 @@ export class AppComponent implements AfterViewInit, OnInit{
       if(resultado==="editado"){
         this.showRegistros();
       }
+    })
+  }
+
+  mostrarAlerta(msg: string, accion: string){
+    this._snackBar.open(msg, accion,{
+      horizontalPosition:"end",
+      verticalPosition:"top",
+      duration:3000
     });
   }
+
+  dialogoEliminarRegistro(dataResponse:Registros){
+    this.dialog.open(DialogoDeleteComponent,{
+      disableClose:true,
+      width: '350px',
+      data:dataResponse
+    }).afterClosed().subscribe(resultado =>{
+      if(resultado==="eliminar"){
+        
+        this._dataService.deleteRegistro(dataResponse.documento).subscribe({
+          next:(data)=>{
+            this.mostrarAlerta("Empleado fue eliminado", "Listo");
+            this.showRegistros();
+          },
+          error:(e)=>{console.log(e)}
+        })
+      }
+    })
   }
+  }
+
+  
 
   

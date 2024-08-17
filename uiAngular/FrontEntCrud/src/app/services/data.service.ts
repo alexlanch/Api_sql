@@ -16,7 +16,7 @@ export class DataService {
     return this.http.get<Registros[]>(this.apiUrl);
   }
 
-  getRegistro(documento: string): Observable<Registros> {
+  getRegistro(documento: number): Observable<Registros> {
     return this.http.get<Registros>(`${this.apiUrl}/${documento}`);
   }
 
@@ -25,7 +25,7 @@ export class DataService {
     return this.http.post<Registros>(this.apiUrl, registro);
   }
 
-  updateRegistro(documento: string, registro: Registros): Observable<void> {
+  updateRegistro(documento: number, registro: Registros): Observable<void> {
     return this.http.put<void>(`${this.apiUrl}/${documento}`, registro);
   }
 
