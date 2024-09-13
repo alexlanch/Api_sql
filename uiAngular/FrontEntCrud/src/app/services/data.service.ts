@@ -8,7 +8,7 @@ import { Registros } from '../models/registros.model';
   providedIn: 'root'
 })
 export class DataService {
-  private apiUrl = 'https://localhost:44382/api/Registros';
+  private apiUrl = 'https://localhost:44382/api/User';
 
   constructor(private http: HttpClient) {}
 

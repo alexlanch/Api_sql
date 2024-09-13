@@ -14,16 +14,16 @@ namespace Api_Sql.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class RegistrosController : ControllerBase
+    public class UserController : ControllerBase
     {
         private readonly string _connectionString = string.Empty;
 
-        public RegistrosController(IConfiguration configuration)
+        public UserController(IConfiguration configuration)
         {
             _connectionString = configuration.GetValue<string>("ConnectionStringAccessControl") ?? string.Empty;
         }
 
-         // GET: api/<RegistrosController>
+        // GET: api/<UserController>
         [HttpGet]
         public IEnumerable<Registros> Get()
         {
@@ -40,7 +40,7 @@ namespace Api_Sql.Controllers
         }
 
 
-        // GET: api/<RegistrosController>/{documento}
+        // GET: api/<UserController>/{documento}
         [HttpGet("{documento}")]
         public IActionResult GetByDocumento(string documento)
         {
@@ -66,7 +66,7 @@ namespace Api_Sql.Controllers
 
 
 
-        // POST: api/<RegistrosController>
+        // POST: api/<UserController>
         [HttpPost]
         public IActionResult Post([FromBody] Registros nuevoRegistro)
         {
@@ -92,7 +92,7 @@ namespace Api_Sql.Controllers
 
 
 
-        // PUT: api/<RegistrosController>/{documento}
+        // PUT: api/<UserController>/{documento}
         [HttpPut("{documento}")]
         public IActionResult PutByDocumento(string documento, [FromBody] Registros registroActualizado)
         {
@@ -128,7 +128,7 @@ namespace Api_Sql.Controllers
 
 
 
-        // DELETE: api/<RegistrosController>/{documento}
+        // DELETE: api/<UserController>/{documento}
         [HttpDelete("{documento}")]
         public IActionResult Delete(int documento)
         {
